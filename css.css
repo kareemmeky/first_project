@@ -1,0 +1,104 @@
+
+*{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+ background:linear-gradient(#01012e,#240019);
+ 
+height: 100vh;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+}
+
+.section_content{
+    background-image: url(./stars1.webp);
+    height: 100vh;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+
+}
+
+ul li{
+    list-style: none;
+    margin-top: 26px;
+    text-align: center;
+    
+}
+
+ul li a{
+    background-color: rgb(52, 27, 125);
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 20px;
+    color: aliceblue;
+   text-decoration:none;
+   letter-spacing: 4px;
+   position: relative;
+   z-index: 20px;
+}
+
+ul:hover li a{
+    background-color: rgba(82, 8, 83, 0.501);
+    scale: 1.5;
+    opacity:0;
+
+}
+
+ul li a:hover{
+    opacity: 1;
+}
+
+ul li::after{
+    content:attr(data-text);
+    color: aliceblue;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 80px;
+    font-weight: 900;
+    z-index: -10;
+ 
+    text-transform: uppercase;
+    opacity: 0;/*!   يكون مش موجود*/
+    /* pointer-events: none;! لمي الموس يجي علي الكلام الي انا ضفته مفيش حاجه تحصل */
+}
+
+ul li:hover:after{
+    opacity: .5;
+ transition: 0.4s;
+   letter-spacing: 10px;
+
+
+    
+}
+
+
+ul li::before{
+    content: '';
+    width: 180px;
+    height: 80px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,70%);
+    border-radius: 50%;
+    box-shadow: 0 0 80px orangered;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: -10;
+}
+
+ul li:hover:before{
+    opacity: 0.5;
+    width: 80px;
+}
